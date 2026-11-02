@@ -1,0 +1,13 @@
+{
+  "name": "vda5050-spec",
+  "description": "VDA 5050 참조 스킬 vda5050-spec 배포용 마켓플레이스",
+  "owner": { "name": "조병민", "email": "byeongmin.cho@ahha.ai" },
+  "plugins": [
+    {
+      "name": "vda5050-spec",
+      "source": "./",
+      "description": "VDA 5050 공식 스펙(2.1.0, 3.0.0) 원문, JSON 스키마, 메시지 검증 스크립트를 담은 참조 스킬",
+      "version": "0.1.0"
+    }
+  ]
+}

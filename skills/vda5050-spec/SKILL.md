@@ -30,8 +30,10 @@ enum value, error type or rule:
 2. Look it up in the matching file and cite the section number.
 3. If the text and the schema disagree, say so and give the PDF verdict (see "Text vs schema conflicts").
 
+Resolve `SK` to the directory containing this SKILL.md in the installed plugin; do not use the current project's working directory.
+
 ```bash
-SK=<this skill dir>
+SK="<absolute path to this skill directory>"
 grep -n -E '^#{2,4} [0-9]' $SK/spec/VDA5050_EN-3.0.0.md      # section map
 grep -n 'minimumStateInterval' $SK/spec/VDA5050_EN-3.0.0.md $SK/schemas/3.0.0/*.json
 ```

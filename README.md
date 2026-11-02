@@ -16,19 +16,16 @@ VDA 5050(모바일 로봇과 플릿 컨트롤 사이의 MQTT 인터페이스) �
 
 ## 불러오기
 
-이 폴더를 그대로 불러온다. `~/.claude/settings.json`의 `env.CLAUDE_CODE_PLUGIN_DIRS`에 이 폴더 경로를 넣고 Claude Code를 다시 시작한다. 경로가 여러 개면 `:`로 구분한다.
+GitHub 마켓플레이스에서 사용자 범위로 한 번 설치하면, 해당 사용자가 여는 여러 프로젝트에서 사용할 수 있다. 저장소를 특정 경로에 직접 복제할 필요는 없다.
 
-```json
-{
-  "env": {
-    "CLAUDE_CODE_PLUGIN_DIRS": "/Users/bmcho/Documents/git/plan-dev-relay:/Users/bmcho/Documents/git/vda5050-spec"
-  }
-}
+```bash
+claude plugin marketplace add bmcho/vda5050-spec
+claude plugin install vda5050-spec@vda5050-spec --scope user
 ```
 
-다시 시작하면 스킬이 `vda5050-spec:vda5050-spec`로 보인다. 한 세션에서만 쓰려면 `claude --plugin-dir <이 폴더>`로 실행한다.
+Claude Code에서 `/vda5050-spec:vda5050-spec`을 호출하거나 VDA 5050 관련 질문을 한다. 비공개 저장소라면 설치하는 사용자의 GitHub 접근 권한이 필요하다. 다른 컴퓨터에서는 별도로 설치해야 한다.
 
-마켓플레이스로 설치할 수도 있다: `claude plugin marketplace add <이 폴더>` 다음 `claude plugin install vda5050-spec@vda5050-spec`. 폴더 불러오기와 마켓플레이스 설치를 함께 쓰면 스킬이 두 번 뜨므로 하나만 쓴다.
+개발 중인 로컬 복사본을 한 세션에서 시험하려면 `claude --plugin-dir <플러그인 폴더>`를 사용한다. 기존에 같은 플러그인을 로컬 경로로 불러오고 있다면 중복 로딩을 피하도록 해당 경로 설정을 제거한다. 다른 플러그인의 경로는 유지한다.
 
 ## 메시지 검증
 
